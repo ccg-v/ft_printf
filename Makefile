@@ -32,16 +32,16 @@ DEP_FILES = $(OBJ_FILES:.o=.d)
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
-	ar -rcs $(NAME) $(OBJ_FILES)
+	@ar -rcs $(NAME) $(OBJ_FILES)
 
 %.o: %.c
-	${CC} -c ${CFLAGS}  $< -o $@
+	@${CC} -c ${CFLAGS}  $< -o $@
 	
 clean:
-	rm -f $(OBJ_FILES) $(DEP_FILES)
+	@rm -f $(OBJ_FILES) $(DEP_FILES)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all	
 
